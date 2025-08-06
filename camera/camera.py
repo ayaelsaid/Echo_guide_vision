@@ -2,12 +2,34 @@ import cv2
 import PIL.Image
 
 class CameraHandler:
-    """Manages camera operations for capturing images."""
+    """
+    Manages camera operations for capturing images using OpenCV.
+
+    This class provides methods to:
+    - Start the camera
+    - Capture a frame and convert it to a PIL image
+    - Stop and release the camera resources
+    """
+
     def __init__(self):
+        """
+        Initializes the CameraHandler instance.
+
+        Attributes:
+            image_capture (cv2.VideoCapture): The OpenCV video capture object.
+        """
         self.image_capture = None
 
     def start_camera(self):
-        """Starts the camera."""
+        """
+        Starts the camera if it's not already running.
+
+        Returns:
+            bool: True if the camera starts successfully.
+
+        Raises:
+            Exception: If the camera cannot be accessed or is in use.
+        """
         if self.image_capture is None or not self.image_capture.isOpened():
             self.image_capture = cv2.VideoCapture(0)
             if not self.image_capture.isOpened():
@@ -16,7 +38,16 @@ class CameraHandler:
         return True
 
     def take_capture(self):
-        """Captures an image and returns it as a PIL Image."""
+        """
+        Captures a single frame from the camera and returns it as a resized PIL image.
+
+        Returns:
+            PIL.Image.Image or None: The captured image in RGB format resized to 200x200,
+                                     or None if capture fails or camera is not running.
+
+        Side Effects:
+            Displays the captured frame in a window using OpenCV.
+        """
         if self.image_capture is None or not self.image_capture.isOpened():
             print("Camera is not running. Please start the camera first.")
             return None
@@ -32,11 +63,16 @@ class CameraHandler:
 
         pil_img = PIL.Image.fromarray(frame_rgb)
         pil_img = pil_img.resize((200, 200))
-        print("✅ Image captured successfully.")
+        print("Image captured successfully.")
         return pil_img
 
     def stop_camera(self):
-        """Stops the camera and releases resources."""
+        """
+        Stops the camera and releases associated resources.
+
+        Side Effects:
+            Closes any OpenCV windows and releases the video capture object.
+        """
         if self.image_capture and self.image_capture.isOpened():
             self.image_capture.release()
             cv2.destroyAllWindows()

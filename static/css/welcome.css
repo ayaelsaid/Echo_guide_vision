@@ -1,0 +1,94 @@
+body {
+      margin: 0;
+      padding: 0;
+      background-color: rgb(31, 30, 30);
+      font-family: Arial, sans-serif;
+      color: #FFFFF0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: black;
+      border-radius: 20px;
+      border: 2px solid #FFFACD;
+      height: 650px;
+      width: 620px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .header img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .header h1 {
+      font-size: 3em;
+      margin: 0;
+      color:  #FFFACD;
+    }
+
+    .sub-title {
+      font-size: 2.5em;
+      font-weight: bold;
+      color:  #ffcc00;
+      margin-bottom: 0;
+    }
+
+    .slogan {
+      font-size: 1.2em;
+      font-style: italic;
+      color: #FFFACD;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    label, select, input {
+      font-size: 1.2em;
+      margin: 10px 0;
+    }
+
+    input, select {
+      padding: 8px;
+      border-radius: 8px;
+      border: none;
+      width: 50%;
+
+    }
+    #startBtn {
+  padding: 12px 70px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: white;
+  background-color: orange;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(255, 165, 0, 0.3);
+}
+
+#startBtn:hover {
+  background-color: darkorange;
+  transform: scale(1.05);
+}
+
+#startBtn:active {
+  background-color: #cc7000;
+  transform: scale(0.98);
+}

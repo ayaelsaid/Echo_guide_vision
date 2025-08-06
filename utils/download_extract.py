@@ -4,6 +4,37 @@ import shutil
 import wget
 
 def download_and_extract(url, save_path_for_zip, extract_to_dir):
+    """
+    Downloads a ZIP file from a given URL and extracts its contents to a target directory.
+
+    This function:
+    - Creates necessary directories if they don't exist
+    - Skips download and extraction if the target directory already contains files
+    - Downloads the ZIP file using `wget` if not already present
+    - Extracts the ZIP contents to the specified directory
+    - Handles nested folders by flattening the structure (moves inner contents up)
+
+    Args:
+        url (str): The URL to download the ZIP file from.
+        save_path_for_zip (str): Full path where the ZIP file should be saved.
+        extract_to_dir (str): Directory where the contents should be extracted.
+
+    Returns:
+        bool: True if extraction is successful or already completed.
+
+    Side Effects:
+        - Creates directories
+        - Downloads file from the internet
+        - Extracts ZIP contents
+        - Moves files if nested folder is detected
+
+    Example:
+        download_and_extract(
+            url="https://example.com/model.zip",
+            save_path_for_zip="models/vosk_model.zip",
+            extract_to_dir="models/vosk_model"
+        )
+    """
     print("📥 Downloading model...")
 
     os.makedirs(os.path.dirname(save_path_for_zip), exist_ok=True)
