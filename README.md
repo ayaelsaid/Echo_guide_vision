@@ -161,9 +161,12 @@ python -m venv venv
 
 source venv/bin/activate  # or venv\Scripts\activate on Windows
 
+#download Gemma 3n model i use her Gemma 3n E2B(i put them nside .gitignore to can push project to github )
+
 # Install dependencies
 pip install -r requirements.txt
 
 # Run the app
 python app.py
+
 
