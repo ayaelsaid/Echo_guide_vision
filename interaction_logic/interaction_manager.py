@@ -10,7 +10,7 @@ class InteractionManager:
     """Manages the overall interaction flow with the user."""
 
     def __init__(self, camera_handler, speak_func, record_audio_func, speech_to_text_func,
-                 save_image_func, save_interaction_func, load_interaction_func, init_ai):
+                 save_image_func, save_interaction_func, load_interaction_func, load_name,  init_ai):
         self.camera_handler = camera_handler
         self.speak = speak_func
         self.record_audio_once = record_audio_func
@@ -40,12 +40,14 @@ class InteractionManager:
         print("Starting interaction flow...")
 
         self.camera_handler.start_camera()
-        self.speak('Hi there! How can I help you?')
+        load = self.load_name()
+        name = load.get('name')
+        self.speak('Hi {name}! How are you donig?')
 
         try:
             while True:
                 if self.current_image is None:
-                    self.speak('Please look at the camera for a moment.')
+                    self.speak('Please set the camera for a moment {name}, iwill take photo after 3. 1 2 3')
                     img = self.camera_handler.take_capture()
                     if img is None:
                         self.speak("Sorry, I couldn't capture an image. Please try again.")

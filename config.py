@@ -24,7 +24,7 @@ AUDIO_FOLLOW_UP_DURATION = 4
 # VOSK_MODEL_PATH = "models/vosk-model-small-en-us-0.15"
 
 # Image Storage
-# IMAGE_SAVE_DIRECTORY = "/captured_images"
+IMAGE_SAVE_DIRECTORY = "/captured_images"
 IMAGE_FILENAME = "last_capture.jpg"
 
 LANG_SETTINGS = {

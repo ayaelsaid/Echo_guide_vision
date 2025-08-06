@@ -1,6 +1,6 @@
 import datetime
 from peewee import OperationalError
-from .models import LastInteractionState, Language
+from .models import LastInteractionState, Language, Name
 from .db_config import db
 
 
@@ -8,7 +8,7 @@ def setup_orm_database():
     """Initializes the ORM database and creates tables if they don't exist."""
     try:
         db.connect()
-        db.create_tables([LastInteractionState, Language])
+        db.create_tables([LastInteractionState, Language, Name])
 
         try:
             LastInteractionState.get(LastInteractionState.id == 1)
@@ -19,6 +19,12 @@ def setup_orm_database():
         except Language.DoesNotExist:
             Language.create(id=1, language=None)
         print(f"ORM Database and models initialized successfully.")
+        try:
+            Name.get(Name.id == 1)
+        except Name.DoesNotExist:
+            Name.create(id=1, name=None)
+        print(f"ORM Database and models initialized successfully.")
+
     except OperationalError as e:
         print(f"ORM: Database connection error during setup: {e}")
     except Exception as e:
@@ -36,11 +42,11 @@ def save_language(language):
         state.language = language
         state.timestamp = datetime.datetime.now()
         state.save()
-        print("ORM: Last interaction state saved successfully.")
+        print("ORM: language saved successfully.")
     except OperationalError as e:
         print(f"ORM: Database connection error during save: {e}")
     except Exception as e:
-        print(f"ORM: Error saving last interaction: {e}")
+        print(f"ORM: Error saving language: {e}")
     finally:
         if not db.is_closed():
             db.close()
@@ -54,13 +60,50 @@ def load_language():
         state_data = {
             "language": state.language,
         }
-        print("ORM: Last interaction state loaded successfully.")
+        print("ORM: language loaded successfully.")
     except Language.DoesNotExist:
-        print("ORM: No previous interaction found (ID 1 does not exist or has no data).")
+        print("ORM: No language found (ID 1 does not exist or has no data).")
     except OperationalError as e:
         print(f"ORM: Database connection error during load: {e}")
     except Exception as e:
-        print(f"ORM: Error loading last interaction: {e}")
+        print(f"ORM: Error loading language: {e}")
+    finally:
+        if not db.is_closed():
+            db.close()
+    return state_data
+def save_name(name):
+    """Saves the last interaction details using Peewee ORM."""
+    try:
+        db.connect()
+        state = Name.get(Name.id == 1)
+        state.name = name
+        state.timestamp = datetime.datetime.now()
+        state.save()
+        print("ORM: Name saved successfully.")
+    except OperationalError as e:
+        print(f"ORM: Database connection error during save: {e}")
+    except Exception as e:
+        print(f"ORM: Error saving name: {e}")
+    finally:
+        if not db.is_closed():
+            db.close()
+
+def load_name():
+    """Loads the last interaction details using Peewee ORM."""
+    db.connect()
+    state_data = {}
+    try:
+        state = Name.get(Name.id == 1)
+        state_data = {
+            "name": state.name,
+        }
+        print("ORM: Name loaded successfully.")
+    except Name.DoesNotExist:
+        print("ORM: No name found (ID 1 does not exist or has no data).")
+    except OperationalError as e:
+        print(f"ORM: Database connection error during load: {e}")
+    except Exception as e:
+        print(f"ORM: Error loading name: {e}")
     finally:
         if not db.is_closed():
             db.close()

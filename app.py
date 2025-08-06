@@ -1,7 +1,8 @@
 import os
-import sys
+# import sys
 import atexit
-from flask import Flask, request, jsonify, send_from_directory, render_template
+from flask import Flask, request, jsonify, send_from_directory, render_template, redirect, url_for
+
 from flask_cors import CORS
 import PIL.Image
 from config import DB_FILE, IMAGE_SAVE_DIRECTORY, MODELS_DIR, LANG_SETTINGS
@@ -9,8 +10,8 @@ from audio_processing.speech import speech_to_text
 from audio_processing.listen import record_audio_once
 from audio_processing.speak import speak
 
-from camera_capture.camera import CameraHandler
-from data_storage.database import setup_orm_database, save_last_interaction_orm, load_last_interaction_orm, save_language
+from camera.camera import CameraHandler
+from data_storage.database import setup_orm_database, save_last_interaction_orm, load_last_interaction_orm, save_language, save_name, load_name
 from data_storage.models import LastInteractionState
 from data_storage.db_config import db # CORRECTED: Import db from db_config
 from interaction_logic.interaction_manager import InteractionManager
@@ -25,8 +26,7 @@ app = Flask(__name__)
 CORS(app) # Enable CORS for all routes
 
 # Configure static file serving for captured images
-app.config['UPLOAD_FOLDER'] = IMAGE_SAVE_DIRECTORY
-
+app.config['UPLOAD_FOLDER'] = os.path.join('static', IMAGE_SAVE_DIRECTORY)
 
 
 camera_handler = CameraHandler()
@@ -37,18 +37,26 @@ interaction_manager = InteractionManager(camera_handler=camera_handler,
                                          save_image_func=save_pil_image_to_disk,
                                          save_interaction_func=save_last_interaction_orm,
                                          load_interaction_func=load_last_interaction_orm,
+                                         load_name=load_name,
                                          init_ai=init_ai
                                     )
 
 @app.route("/")
 def home():
-   return render_template("index")
+   user = load_name()
+   name = user.get('name')
+   if name:
+       return render_template("index.html")
+   else:
+       return render_template("welcome.html")
 
-@app.route('/choose_lang', methods=['POST'])
-def choose_lang():
+@app.route('/add_user', methods=['POST'])
+def add_user():
     global current_language_settings
     request_data = request.get_json()
-    selected_language_code = request_data.get('language_code') 
+    selected_language_code = request_data.get('language_code')
+    name = request_data.get('name')
+    save_name(name)
 
     
     lang_info = LANG_SETTINGS.get(selected_language_code)
@@ -70,7 +78,8 @@ def choose_lang():
         "vosk_model_name": vosk_model_local_path,
         "tts_voice_name": tts_voice_or_path
     }
-    return jsonify({"message": f"Language '{selected_language_code}' selected successfully."}), 200
+    return redirect(url_for('home'))
+
 
 
 

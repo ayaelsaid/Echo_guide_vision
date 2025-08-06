@@ -28,3 +28,12 @@ class Language(BaseModel):
 
     class Meta:
         table_name = 'language'
+
+class Name(BaseModel):
+    """Model to store the state of the last interaction."""
+    id = IntegerField(primary_key=True, default=1)
+    name = TextField(null=True)
+    timestamp = DateTimeField(default=datetime.datetime.now)
+
+    class Meta:
+        table_name = 'name'

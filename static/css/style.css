@@ -12,7 +12,7 @@
 
     .container {
       background-color: black;
-      border: 2px solid white;
+      border: 2px solid #FFFACD;
       border-radius: 20px;
       padding: 20px;
       height: 90vh;
@@ -46,6 +46,10 @@
       align-items: center;
       justify-content: center;
       color: #FFFFF0;
+    }
+     img {
+      width: 200px;
+      height: 200px;
     }
 
     #aiResponseText {
@@ -81,7 +85,7 @@
 
     .icon-button {
       width: 100px;
-      height: 300px;
+      height: 1500px;
       border-radius: 50%;
       background-color: #e46612 ;
       border: none;
