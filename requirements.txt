@@ -1,0 +1,19 @@
+opencv-python
+sounddevice
+simpleaudio
+pyttsx3
+vosk
+Flask
+Flask-Cors
+datetime
+peewee
+Pillow
+python-dotenv
+# huggingface_hub
+timm==1.0.17
+transformers
+accelerate
+# torch
+# torchvision
+TTS
+wget
