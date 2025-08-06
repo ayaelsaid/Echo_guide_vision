@@ -1,4 +1,4 @@
-###🌟 **Echo Guide Vision: AI Powered by Gemma**
+🌟 **Echo Guide Vision: AI Powered by Gemma**
      *Your Second Eye — One That Never Leaves You*
 
 ![](https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F27972555%2F89e7b0c157a238bc6e4c70f5d33175e3%2Fecho_logo.jpg?generation=1754499607749038&alt=media)
@@ -9,7 +9,7 @@ This assistant helps visually impaired users identify objects, recognize faces, 
 
 
 ---------------------------------------------------------------------------------------------------------------------
- 🌟** Inspiration**
+ 🌟**Inspiration**
 
 After the Ramsis Central fire, many people lost access to smart assistants and GPS tools. For blind individuals, this meant losing autonomy. Echo Guide Vision was built to answer one deep question:
 How do you navigate the world when the digital world disappears?
@@ -67,19 +67,18 @@ With one simple tap, users can interact with the app:
 
 ###🧠 **What Echo Guide Can Do**
 
-|  Feature                                            Description                                                        |  
 | ---------------------------------   -----------------------------------------                                           
-|  🖼️ Scene Understanding	             Describes surroundings, people, objects 
+|  🖼️ Scene Understanding: Describes surroundings, people, objects 
 |-----------------------------------------------------------------------------
-|  💊 Text Reading	                   Reads prescriptions, bills, labels 
+|  💊 Text Reading: Reads prescriptions, bills, labels 
 |----------------------------------------------------------------------------
-|  🚧 Obstacle Detection               Detects stairs, paths, and barriers      
+|  🚧 Obstacle Detection: Detects stairs, paths, and barriers      
 |----------------------------------------------------------------------------
-|  👕 Clothing & Color Support	        Helps choose clothes, identifies colors
+|  👕 Clothing & Color Support: Helps choose clothes, identifies colors
 |----------------------------------------------------------------------------
-|  🚦Traffic Signal Awareness          Detects red/green pedestrian lights 
+|  🚦Traffic Signal Awareness: Detects red/green pedestrian lights 
 |----------------------------------------------------------------------------
-|  💰 Currency + Math	                Identifies currency, counts totals                     
+|  💰 Currency + Math: Identifies currency, counts totals                     
 
 
 ----------------------------------------------------------------------------------------------------------------------------------
@@ -153,11 +152,13 @@ With one simple tap, users can interact with the app:
 ⚙️ **Setup Instruction**
 
 # Clone repository
-git clone https://github.com/your-username/echo-guide-vision.git
+git clone https://github.com/ayaelsaid/Echo_guide_vision
+
 cd echo-guide-vision
 
 # Create virtual environment
 python -m venv venv
+
 source venv/bin/activate  # or venv\Scripts\activate on Windows
 
 # Install dependencies
@@ -165,3 +166,4 @@ pip install -r requirements.txt
 
 # Run the app
 python app.py
+
