@@ -43,6 +43,7 @@ startButton.addEventListener('click', async () => {
     if (response.ok) {
       updateStatus('Interaction complete. Showing last details.');
       console.log('Server response:', data);
+      
 
       // Display image if available
       if (data.last_image_path) {

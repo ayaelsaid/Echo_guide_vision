@@ -8,10 +8,9 @@ Flask-Cors
 datetime
 peewee
 Pillow
-python-dotenv
 # huggingface_hub
 timm==1.0.17
-transformers
+transformers==4.53.2
 accelerate
 # torch
 # torchvision
