@@ -1,7 +1,7 @@
 from config import LANG_SETTINGS
-from which_spoken import WhichSpoken
+from audio_processing.speaking.which_spoken import WhichSpoken
 from data_storage.lang_handler import GetLanguage
-from init_speaking import InitSpeaking
+from audio_processing.speaking.init_speaking import InitSpeaking
 from utils.play_audio import play_audio
 init_speaking = InitSpeaking()
 
