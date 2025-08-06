@@ -1,0 +1,1 @@
+D:\my_echo\data_storage
