@@ -10,13 +10,6 @@ from config import LANG_SETTINGS
 torch.serialization.add_safe_globals({'TTS.utils.radam.RAdam': RAdam})
 
 
-def _make_Dir(dir_name):
-    if not os.path.exists(dir_name):
-        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-        DIR_Name = os.path.join(BASE_DIR, dir_name)
-        return DIR_Name
-    return
-
 def _init_pyttsx3():
     engine = pyttsx3.init()
     voices = engine.getProperty('voices')
