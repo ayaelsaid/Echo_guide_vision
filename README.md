@@ -63,7 +63,7 @@ Echo Guide Vision works 100% offline to ensure:
 
 ---
 
-![](https://github.com/ayaelsaid/Echo_guide_vision/blob/main/user%20enter%20his%20name.jpg)
+![](https://github.com/ayaelsaid/Echo_guide_vision/blob/main/user%20enter%20his%20name%20(2).jpg)
 
 
 With one simple tap, users can interact with the app:
@@ -132,6 +132,12 @@ With one simple tap, users can interact with the app:
 `controllers/`, `routes/`, `models/`, `camera/`, `audio_processing/`, `ai_integration/`, `utils/`, `templates/`, `static/`,` app.py`, `factory_app.py`, `config.py`, `.gitignore` - for large folder (gemma model, vosk model) uploaded it inside github without problem
 
 -------------------------------------------------------------------------------------------------------------------------------------
+
+![](https://github.com/ayaelsaid/Echo_guide_vision/blob/main/user%20enter%20his%20name.jpg)
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
 **Test speech, record and speaking**
 
 ```
@@ -201,6 +207,7 @@ test_speech_record_speak()'''
 ---------------------------------------------------------------------------------------------
 
 Note i use her Gemma 3n E2B(i put them inside .gitignore to can push project to github )
+
 
 
 
