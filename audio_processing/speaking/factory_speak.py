@@ -1,8 +1,4 @@
 from config import LANG_SETTINGS
-from audio_processing.speaking.which_spoken import WhichSpoken
-from data_storage.lang_handler import GetLanguage
-from audio_processing.speaking.init_speaking import InitSpeaking
-from utils.play_audio import play_audio
 
 class FactorySpeak:
     """
