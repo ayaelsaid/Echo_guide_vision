@@ -149,24 +149,10 @@ With one simple tap, users can interact with the app:
                    - Handle local currencies for calculations 
 
 ---------------------------------------------------------------------------------------------
-⚙️ **Setup Instruction**
 
-# Clone repository
-git clone https://github.com/ayaelsaid/Echo_guide_vision
+# Note i use her Gemma 3n E2B(i put them inside .gitignore to can push project to github )
 
 
-# Create virtual environment
-python -m venv venv
-
-source venv/bin/activate  # or venv\Scripts\activate on Windows
-
-# download Gemma 3n model i use her Gemma 3n E2B(i put them nside .gitignore to can push project to github )
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run the app
-python app.py
 
 
 
