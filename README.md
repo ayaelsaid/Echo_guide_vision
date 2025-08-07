@@ -23,9 +23,10 @@ I’ve deployed `gemma_3n_E2B`- and `gemma_3n_E2B_it` on Kaggle to demonstrate i
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
  🌟**Inspiration**
+ 
+ After the Ramsis Central fire, many people lost access to smart assistants and GPS tools. For blind individuals, this meant losing autonomy. Echo Guide Vision was built to answer one deep question:
+ How do you navigate the world when the digital world disappears?
 
-After the Ramsis Central fire, many people lost access to smart assistants and GPS tools. For blind individuals, this meant losing autonomy. Echo Guide Vision was built to answer one deep question:
-How do you navigate the world when the digital world disappears?
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 🌍 **Global Need**
@@ -194,6 +195,7 @@ test_speech_record_speak()'''
 ---------------------------------------------------------------------------------------------
 
 Note i use her Gemma 3n E2B(i put them inside .gitignore to can push project to github )
+
 
 
 
