@@ -1,5 +1,7 @@
-🌟 ###Echo Guide Vision: AI Powered by Gemma
-     **Your Second Eye — One That Never Leaves You**
+## 🌟 Echo Guide Vision: AI Powered by Gemma
+
+**Your Second Eye — One That Never Leaves You**
+
 --------------------------------------------------
 
 ![](https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F27972555%2F89e7b0c157a238bc6e4c70f5d33175e3%2Fecho_logo.jpg?generation=1754499607749038&alt=media)
@@ -190,6 +192,7 @@ test_speech_record_speak()'''
 ---------------------------------------------------------------------------------------------
 
 Note i use her Gemma 3n E2B(i put them inside .gitignore to can push project to github )
+
 
 
 
