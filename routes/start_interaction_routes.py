@@ -12,6 +12,7 @@ from ai_integrations.gemma_3n import init_ai
 from audio_processing.speech import Stt
 from audio_processing.speaking.init_speaking import InitSpeaking
 from audio_processing.speaking.which_spoken import WhichSpoken
+from utils.play_audio import play_audio
 
 
 # Initialize core components for interaction
