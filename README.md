@@ -15,7 +15,9 @@ This assistant helps visually impaired users identify objects, recognize faces, 
 ---------------------------------------------------------------------------------------------------------------------------------------
 
 I’ve deployed `gemma_3n_E2B`- and `gemma_3n_E2B_it` on Kaggle to demonstrate its offline-first capabilities.
+
 [Click here to view `gemma_3n_E2B` notebook](https://www.kaggle.com/code/aya1490/notebook0c0c8ad1bc) and understand how it works step by step.
+
 [Click here to view `gemma_3n_E2B_it` notebook](https://www.kaggle.com/code/aya1490/gemma-3n-image-to-text-on-kaggle) and understand how it works step by step.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -192,6 +194,7 @@ test_speech_record_speak()'''
 ---------------------------------------------------------------------------------------------
 
 Note i use her Gemma 3n E2B(i put them inside .gitignore to can push project to github )
+
 
 
 
