@@ -46,7 +46,6 @@ Endpoints:
 - Other endpoints are registered via Blueprints
 
 """
-app = create_app()
 
 # Main Program Execution
 if __name__ == '__main__':
@@ -54,7 +53,7 @@ if __name__ == '__main__':
     database = SetupDatabase()
     database.setup_orm_database()
 
-
+    app = create_app()
     print("Server ready. Use the /start_interaction endpoint to begin the interaction.")
 
     # Ensure the Peewee database connection is closed when the Flask app exits
