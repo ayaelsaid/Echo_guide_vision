@@ -3,10 +3,6 @@ from audio_processing.speaking.which_spoken import WhichSpoken
 from data_storage.lang_handler import GetLanguage
 from audio_processing.speaking.init_speaking import InitSpeaking
 from utils.play_audio import play_audio
-init_speaking = InitSpeaking()
-
-spoken = WhichSpoken(init_speaking.init_pyttsx3, init_speaking.init_tts, play_audio=play_audio)
-get_lang = GetLanguage
 
 class FactorySpeak:
     """
@@ -27,5 +23,3 @@ class FactorySpeak:
             return self.speak_english(msg)
         else:
             return self.speak_other(msg, spoken_languague_model)
-
-factory_Speak = FactorySpeak(spoken.speak_english, spoken.speak_other_language, get_lang=get_lang)
