@@ -113,7 +113,7 @@ With one simple tap, users can interact with the app:
 
 `Vosk` – speech-to-text
 
-`pyttsx3` – text-to-speech
+`pyttsx3` `TTS` – text-to-speech
 
 `sounddevice`, `ssimpleaudio` – voice input/output
 
@@ -210,6 +210,7 @@ test_speech_record_speak()
 ---------------------------------------------------------------------------------------------
 
 Note i use her Gemma 3n E2B(i put them inside .gitignore to can push project to github )
+
 
 
 
