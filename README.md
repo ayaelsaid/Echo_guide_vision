@@ -166,6 +166,7 @@ def test_speech_record_speak():
     factory_Speak.speak(text)
 
 test_speech_record_speak()
+
 '''
 
 
@@ -209,6 +210,7 @@ test_speech_record_speak()
 ---------------------------------------------------------------------------------------------
 
 Note i use her Gemma 3n E2B(i put them inside .gitignore to can push project to github )
+
 
 
 
