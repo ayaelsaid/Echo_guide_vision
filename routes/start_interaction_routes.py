@@ -1,6 +1,6 @@
 from flask import jsonify, Blueprint
 from audio_processing.listen import Record
-from audio_processing.speaking.factory_speak import factory_Speak
+from audio_processing.speaking.factory_speak import FactorySpeak
 from data_storage.setup_database import SetupDatabase
 from data_storage.interaction_handler import GetInteraction
 from data_storage.lang_handler import GetLanguage
@@ -10,6 +10,9 @@ from controllers.interaction_manager import InteractionManager
 from utils.image_utils import save_pil_image_to_disk
 from ai_integrations.gemma_3n import init_ai
 from audio_processing.speech import Stt
+from audio_processing.speaking.init_speaking import InitSpeaking
+from audio_processing.speaking.which_spoken import WhichSpoken
+
 
 # Initialize core components for interaction
 camera_handler = CameraHandler()
@@ -19,6 +22,10 @@ get_language = GetLanguage()
 get_name = GetName()
 stt = Stt(get_language)
 record = Record()
+init_speaking = InitSpeaking()
+spoken = WhichSpoken(init_speaking.init_pyttsx3, init_speaking.init_tts, play_audio=play_audio)
+factory_Speak = FactorySpeak(spoken.speak_english, spoken.speak_other_language, get_lang=get_language)
+
 
 # Create interaction manager with all dependencies
 interaction_manager = InteractionManager(
