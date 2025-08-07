@@ -63,7 +63,7 @@ Echo Guide Vision works 100% offline to ensure:
 
 ---
 
-![](https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F27972555%2F484f157c90b3ca7f6f2819905fb39638%2FScreenshot%202025-08-06%20182442.png?generation=1754499734705464&alt=media)
+![](https://github.com/ayaelsaid/Echo_guide_vision/blob/main/user%20enter%20his%20name.jpg)
 
 
 With one simple tap, users can interact with the app:
@@ -77,7 +77,13 @@ With one simple tap, users can interact with the app:
 🔊 App speaks the answer clearly back
 
 -----------------------------------------------------------------------------------------------------------------------------------
+**Workflow**
 
+---------
+
+![](https://github.com/ayaelsaid/Echo_guide_vision/blob/main/user%20enter%20his%20name%20(1).jpg)
+
+-------------------------------
 
 ###🧠 **What Echo Guide Can Do**
 
@@ -195,6 +201,7 @@ test_speech_record_speak()'''
 ---------------------------------------------------------------------------------------------
 
 Note i use her Gemma 3n E2B(i put them inside .gitignore to can push project to github )
+
 
 
 
