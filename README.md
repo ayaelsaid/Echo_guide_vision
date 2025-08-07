@@ -1,5 +1,6 @@
-🌟 **Echo Guide Vision: AI Powered by Gemma**
-     *Your Second Eye — One That Never Leaves You*
+🌟 ###Echo Guide Vision: AI Powered by Gemma
+     **Your Second Eye — One That Never Leaves You**
+--------------------------------------------------
 
 ![](https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F27972555%2F89e7b0c157a238bc6e4c70f5d33175e3%2Fecho_logo.jpg?generation=1754499607749038&alt=media)
 
@@ -8,7 +9,15 @@ Echo Guide Vision leverages **Gemma’s on-device multimodal capabilities** to c
 This assistant helps visually impaired users identify objects, recognize faces, and understand their surroundings in real time.
 
 
----------------------------------------------------------------------------------------------------------------------
+## 🔍 Explore the Model
+---------------------------------------------------------------------------------------------------------------------------------------
+
+I’ve deployed `gemma_3n_E2B`- and `gemma_3n_E2B_it` on Kaggle to demonstrate its offline-first capabilities.
+[Click here to view `gemma_3n_E2B` notebook](https://www.kaggle.com/code/aya1490/notebook0c0c8ad1bc) and understand how it works step by step.
+[Click here to view `gemma_3n_E2B_it` notebook](https://www.kaggle.com/code/aya1490/gemma-3n-image-to-text-on-kaggle) and understand how it works step by step.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
  🌟**Inspiration**
 
 After the Ramsis Central fire, many people lost access to smart assistants and GPS tools. For blind individuals, this meant losing autonomy. Echo Guide Vision was built to answer one deep question:
@@ -112,6 +121,36 @@ With one simple tap, users can interact with the app:
 `controllers/`, `routes/`, `models/`, `camera/`, `audio_processing/`, `ai_integration/`, `utils/`, `templates/`, `static/`,` app.py`, `factory_app.py`, `config.py`, `.gitignore` - for large folder (gemma model, vosk model) uploaded it inside github without problem
 
 -------------------------------------------------------------------------------------------------------------------------------------
+**Test speech, record and speaking**
+
+```
+from audio_processing.speaking.init_speaking import InitSpeaking
+from audio_processing.speaking.which_spoken import WhichSpoken
+from utils.play_audio import play_audio
+from audio_processing.speaking.factory_speak import FactorySpeak
+from audio_processing.listen import Record
+from audio_processing.speech import Stt
+
+class GetLanguage:
+    def load_language(self):
+        return {"language": 'en-US'}
+
+  get_lang = GetLanguage()
+  init_speaking = InitSpeaking()
+  spoken = WhichSpoken(init_speaking.init_pyttsx3, init_speaking.init_tts, play_audio=play_audio)
+  factory_Speak = FactorySpeak(spoken.speak_english, spoken.speak_other_language, get_lang=get_lang)
+
+def test_speech_record_speak():
+    record = Record()
+    data = record.record_audio_once(duration_seconds=4)
+
+    stt = Stt()
+    text = stt.speech_to_text('en-US', data)
+    factory_Speak.speak(text)
+
+test_speech_record_speak()'''
+
+------------------------------------------------------------------------------------------------------------------------------
 
 ###💪 **Challenges Faced**
 
@@ -150,7 +189,8 @@ With one simple tap, users can interact with the app:
 
 ---------------------------------------------------------------------------------------------
 
-# Note i use her Gemma 3n E2B(i put them inside .gitignore to can push project to github )
+Note i use her Gemma 3n E2B(i put them inside .gitignore to can push project to github )
+
 
 
 
