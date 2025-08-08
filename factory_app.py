@@ -1,8 +1,9 @@
-import os
-import atexit
-from flask import Flask, send_from_directory
+# import os
+# import atexit
+# from flask import Flask, send_from_directory
+from flask import Flask
 from flask_cors import CORS
-from config import IMAGE_SAVE_DIRECTORY
+# from config import IMAGE_SAVE_DIRECTORY
 from routes.home_routes import home_bp
 from routes.add_user_routes import user_bp
 from routes.start_interaction_routes import interaction_bp
@@ -34,7 +35,7 @@ def create_app():
  
     app = Flask(__name__)
     
-    CORS(app) #
+    CORS(app)
 
 
     # Register routes
