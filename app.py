@@ -1,14 +1,15 @@
-import os
+# import os
 import atexit
-from flask import Flask, send_from_directory
-from flask_cors import CORS
-from config import IMAGE_SAVE_DIRECTORY
+# from flask import Flask, send_from_directory
+from flask import Flask
+# from flask_cors import CORS
+# from config import IMAGE_SAVE_DIRECTORY
 from data_storage.setup_database import SetupDatabase
 from data_storage.db_config import db
-from routes.home_routes import home_bp
-from routes.add_user_routes import user_bp
-from routes.start_interaction_routes import interaction_bp
-from routes.show_image import show_bp
+# from routes.home_routes import home_bp
+# from routes.add_user_routes import user_bp
+# from routes.start_interaction_routes import interaction_bp
+# from routes.show_image import show_bp
 from factory_app import create_app
 
 
