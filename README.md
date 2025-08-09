@@ -187,7 +187,9 @@ test_speech_record_speak()
 🎯 Almost every tech in this app — was first-time experience for me
 
 ---------------------------------------------------------------------------------------------------------------------------
-###🔥 **Future Improvements companies or anyone want use code can do as i have not experience in it**
+###🔥 **Future Improvements**
+
+**"These are future improvement ideas I hope the community or interested companies can help develop, as I currently do not have the capacity to implement them myself.**
 
 📱 Add weather and SMS reading
 
@@ -210,6 +212,7 @@ test_speech_record_speak()
 ---------------------------------------------------------------------------------------------
 
 Note i use her Gemma 3n E2B(i put them inside .gitignore to can push project to github )
+
 
 
 
