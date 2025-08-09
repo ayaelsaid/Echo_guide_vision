@@ -209,9 +209,15 @@ test_speech_record_speak()
 
                    - Handle local currencies for calculations 
 
+
+ **"I welcome contributions and collaboration from anyone interested in helping to implement these features."**
+
+
+
 ---------------------------------------------------------------------------------------------
 
 Note i use her Gemma 3n E2B(i put them inside .gitignore to can push project to github )
+
 
 
 
